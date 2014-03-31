@@ -36,11 +36,11 @@
 
         $tweets = json_decode($response->getBody());
 
+     
+        $all_tweet = array();
         foreach ($tweets as $tweet) {
-        	
-        	echo $tweet->text;
-        	# preg_replace('@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@', '<a href="$1">$1</a>', $s);
-        	# code...
+        	$text_tweet = preg_replace('@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@', '<a href="$1">$1</a>', $tweet->text);
+        	$all_tweet[] = array('text' => $text_tweet, 'created_at' => $tweet->created_at);
         }
             
         // Création formulaire
@@ -79,7 +79,7 @@
 
 			'posts' => $facebook_posts,
 			'facebook_picture' => $facebook_picture, 
-			'tweets' => $tweets,
+			'tweets' => $all_tweet,
 			'form' => $form->createView(), 	
 		));
 
