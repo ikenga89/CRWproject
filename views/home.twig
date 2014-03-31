@@ -79,11 +79,8 @@
 									<p class="style1"> « Un vrai + pour les études » Eric Yang  </p>
 									<p class="style2">	Le réseau social de Science-U !			</p>
 									<p class="style3"><strong>U-network</strong>, est un <strong>réseau social</strong> et une <strong>plateforme de contacte</strong>entre ancien et nouveaux élèves. <a href="http://html5up.net/license/">C'est l'outils pour vos futures relations professionnelles </a></p>
-									<!--
-									<p class="style3">Mauris tellus lacus, tincidunt eget mattis at, laoreet vel velit. 
-									Aliquam diam ante, aliquet sit amet vulputate lorem at placerat at nisl. 
-									Maecenas et gravida ligula sed lacus euismod tincidunt nullam eget justo orci.</p>
-									-->
+								nas et gravida ligula sed lacus euismod tincidunt nullam eget justo orci.</p>
+								
 									<ul class="actions">
 										<li><a href="#" class="button button-style3 button-big">Se Connecter</a></li>
 									</ul>
@@ -106,11 +103,17 @@
 							<!-- Main -->
 								<div id="main">
 									
-									<!-- Image -->
+									<!-- Video-->
+									<div style="text-align:center;">
 										<a href="http://fav.me/d5pjw3g" class="image image-featured">
-											<iframe width="1280" height="720" iv_load_policy="3" src="//www.youtube-nocookie.com/embed/videoseries?list=PLxGjXGKlkqsBnBRJg_TA5oW49AAXPqULy" frameborder="0" allowfullscreen></iframe>
+
+											<iframe width="640" height="360" src="https://www.youtube.com/embed/ZCC8olDzNNA" frameborder="0" allowfullscreen></iframe>
+
+											
+
 										</a>
-									<!-- /Image -->
+										</div>
+									<!-- /Video-->
 									
 									<!-- Features -->
 										<section id="features">
@@ -230,12 +233,15 @@
 								<div id="footer">
 									<header class="style1">
 										<div>
-											{#
-											{% for posts in post %}
-										        {{ post.created }}
+											{% for post in posts  %}
+												{% if post.message is defined and loop.index < 3 %}
+												
+										        {{ post.created_time|date("d/m/Y") }}
+										        <br />
+										        {{ post.message|truncate(200) }}
+										        {% endif %}
+										        
 										    {% endfor %}
-
-										    #}
 										</div>
 									</header>
 									<hr />
@@ -244,7 +250,7 @@
 											<div class="6u">
 
 												<!-- Contact Form -->
-								
+												<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2784.172630410314!2d4.865629!3d45.747685!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0741b8940b6aded!2sSciences-U+LYON!5e0!3m2!1sfr!2sfr!4v1396266122843" width="600" height="300" frameborder="0" style="border:0"></iframe>	
 												<!-- /Contact Form -->
 
 											</div>
@@ -309,7 +315,7 @@
 							<!-- Copyright -->
 								<div id="copyright">
 									<span>
-										&copy; Untitled. Design by <a href="http://html5up.net/">HTML5 UP</a>.
+										&copy; U-network. Design by <a href="http://html5up.net/">HTML5 UP</a> & CRW Science-U .
 									</span>
 								</div>
 							<!-- /Copyright -->

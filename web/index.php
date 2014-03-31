@@ -27,7 +27,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 // Twig text
 
 $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
-    //$twig->addExtension(new \Twig_Extensions_Extension_Text());
+    $twig->addExtension(new \Twig_Extensions_Extension_Text());
     return $twig;
 }));
 
