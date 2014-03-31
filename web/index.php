@@ -16,15 +16,11 @@ $app->register(new FacebookServiceProvider(), array(
     'facebook.permissions' => array('email'),
 ));
 
-
-
-
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../views',
 ));
 
 // Twig text
-
 $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     $twig->addExtension(new \Twig_Extensions_Extension_Text());
     return $twig;

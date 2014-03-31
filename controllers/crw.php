@@ -26,9 +26,8 @@
             $response = $request->send();
  
             $tweets = json_decode($response->getBody());
-            
+
         // Création formulaire
-        //return $app['twig']->render('home.twig');
 		$form = $app['form.factory']->createBuilder('form')
 		->add('nom', 'text', array(
 			'label' => 'Nom : ',
