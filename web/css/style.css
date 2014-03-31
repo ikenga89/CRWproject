@@ -943,6 +943,7 @@
 		background: #282b34 url('/css/images/overlay.png');
 		color: #eee;
 		color: rgba(255,255,255,0.5);
+		padding-top: 20px;
 	}
 
 		#footer-wrapper h1,
@@ -1093,6 +1094,35 @@
 		}
 		
 /*********************************************************************************/
+/* Facebook API                                                                  */
+/*********************************************************************************/
+
+	.facebook_api
+	{
+		background: #f3f3f3 url('/css/images/overlay.png');
+		color: #484d55;
+		margin:20px; 
+		
+	}
+	
+		.facebook_ul
+	{
+		 box-shadow: inset 0px 0px 2px 0px #a0a1a7;
+		border-radius:0.35em;
+		padding: 1em;
+
+	}
+			.facebook_ul li
+	{
+		border-bottom: solid 1px;
+		border-bottom-color: rgba(255,255,255,0.05);
+		padding: 10px;
+
+	}
+
+		
+		
+/*********************************************************************************/
 /* Logo                                                                          */
 /*********************************************************************************/
 
@@ -1188,4 +1218,16 @@
 				#copyright span a:hover
 				{
 					color: #fff;
+				}
+
+
+				#fancybox-content {
+					background: #fff!important;
+					height: 550px!important;
+				}
+				#fancybox-content textarea {
+					width: 400px;
+				}
+				#fancybox-content input {
+					width: 350px;
 				}

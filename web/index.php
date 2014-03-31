@@ -7,6 +7,9 @@ use Silex\Provider\FacebookServiceProvider;
 
 $app = new Silex\Application();
 
+// Configs
+$app['debug'] = true;
+
 $app->register(new FacebookServiceProvider(), array(
     'facebook.config' => array(
         'appId'      => '414516295351453',
@@ -16,29 +19,21 @@ $app->register(new FacebookServiceProvider(), array(
     'facebook.permissions' => array('email'),
 ));
 
-
-
-$app->register(new FormServiceProvider());
-
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../views',
 ));
 
 // Twig text
-
 $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
-    //$twig->addExtension(new \Twig_Extensions_Extension_Text());
+    $twig->addExtension(new \Twig_Extensions_Extension_Text());
     return $twig;
 }));
-
-$app->register(new Silex\Provider\TranslationServiceProvider(), array(
-    'locale_fallbacks' => array('fr'),
-));
 
 // Url generator
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
 $app->register(new Silex\Provider\SessionServiceProvider());
+
 
 
 // Envoie de mail : le protocole smtp bloqué test impossible a faire
@@ -54,6 +49,15 @@ $app->register(new Silex\Provider\SessionServiceProvider());
 
 ));
 */
+
+$app->register(new FormServiceProvider());
+
+$app->register(new Silex\Provider\ValidatorServiceProvider());
+
+
+$app->register(new Silex\Provider\TranslationServiceProvider(), array(
+    'locale_fallbacks' => array('en'),
+));
 
 // Configs
 $app['debug'] = true;

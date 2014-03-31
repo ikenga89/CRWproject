@@ -79,11 +79,8 @@
 									<p class="style1"> « Un vrai + pour les études » Eric Yang  </p>
 									<p class="style2">	Le réseau social de Science-U !			</p>
 									<p class="style3"><strong>U-network</strong>, est un <strong>réseau social</strong> et une <strong>plateforme de contacte</strong>entre ancien et nouveaux élèves. <a href="http://html5up.net/license/">C'est l'outils pour vos futures relations professionnelles </a></p>
-									<!--
-									<p class="style3">Mauris tellus lacus, tincidunt eget mattis at, laoreet vel velit. 
-									Aliquam diam ante, aliquet sit amet vulputate lorem at placerat at nisl. 
-									Maecenas et gravida ligula sed lacus euismod tincidunt nullam eget justo orci.</p>
-									-->
+								nas et gravida ligula sed lacus euismod tincidunt nullam eget justo orci.</p>
+								
 									<ul class="actions">
 										<li><a href="#" class="button button-style3 button-big">Se Connecter</a></li>
 									</ul>
@@ -230,33 +227,77 @@
 				<div class="title">Contact</div>
 				<div class="container">
 					<div class="row">
-						<div class="12u">
+
+						<!-- FACEBOOK -->
+								<div class="6u">
+										<ul class="facebook_ul">
+											<h3 class="fa fa-facebook-square"> Dernier Post</h3>
+													{% for post in posts  %}
+														{% if post.message is defined and loop.index < 2 %}
+															<li>
+																<div class="row">
+														      		<div class="3u">
+														      		 		<img src="{{ facebook_picture.url }}">
+														        	</div>
+
+														        	<div class="9u">
+														        		Le {{ post.created_time|date("d/m/Y") }}
+													       				{{ post.message|truncate(200) }}
+													       			</div>
+													       		</div>		
+												      		</li>
+												        {% endif %}
+												    {% endfor %}
+										</ul>
+											
+								</div>
+
+						<!-- TWITTER -->
+								<div class="6u">
+										<ul class="facebook_ul">
+											<h3 class="fa fa-twitter-square"> Dernier Post</h3>
+																								
+														    {% for tweet in tweets  %}	
+														    	{% if loop.index < 4 %}
+															      	<li>
+															      		<div class="row">
+															      			<div class="3u">
+															      		 		Le    {{ tweet.created_at|date("d/m/Y") }}
+															        		</div>
+
+															        		<div class="9u">
+														       					{{ tweet.text }}
+														       				</div>	
+														       			</div>													     
+																	</li>
+																{% endif %}	
+															{% endfor %}
+												
+										</ul>
+											
+								</div>
+
+					</div>			
+
+							
 
 							<!-- Footer -->
 								<div id="footer">
-									<header class="style1">
-										<div>
-											{#
-											{% for posts in post %}
-										        {{ post.created }}
-										    {% endfor %}
 
-										    #}
-										</div>
-									</header>
-									<hr />
+
 									<div>
 										<div class="row">
+										
 											<div class="6u">
 
 												<!-- Contact Form -->
-								
+												<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2784.172630410314!2d4.865629!3d45.747685!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0741b8940b6aded!2sSciences-U+LYON!5e0!3m2!1sfr!2sfr!4v1396266122843" width="600" height="300" frameborder="0" style="border:0"></iframe>	
 												<!-- /Contact Form -->
 
 											</div>
-											<div class="6u">
-											
+										
 												<!-- Contacts -->
+												<div class="6u">
 													<section class="footer-two">
 														<div class="feature-list feature-list-small">
 															<div>
@@ -303,19 +344,17 @@
 															</div>
 														</div>
 													</section>
+												</div>	
 												<!-- /Contacts -->
-													
-											</div>
 										</div>
 									</div>
-									<hr />
 								</div>
 							<!-- /Footer -->
 
 							<!-- Copyright -->
 								<div id="copyright">
 									<span>
-										&copy; Untitled. Design by <a href="http://html5up.net/">HTML5 UP</a>.
+										&copy; U-network. Design by <a href="http://html5up.net/">HTML5 UP</a> & CRW Science-U .
 									</span>
 								</div>
 							<!-- /Copyright -->
@@ -325,7 +364,12 @@
 			</div>
 			<div style="display:none">
 				<div id="popup">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					<form action="#" method="post">
+						{{ form_widget(form) }}
+
+						<input type="submit" name="submit" />
+					</form>
+
 				</div>
 			</div>
 			<script type="text/javascript">
@@ -336,7 +380,10 @@
 						'transitionOut'	:	'elastic',
 						'speedIn'		:	200, 
 						'speedOut'		:	200, 
-						'overlayShow'	:	false
+						'overlayShow'	:	false,
+						'autoDimensions': false,
+						'width'			: 420,
+						'height'		: 800
 					});			
 				});
 			</script>
