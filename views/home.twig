@@ -257,7 +257,42 @@
 
 							<!-- Footer -->
 								<div id="footer">
+
 									<div class="row">
+
+									<header class="style1">
+										<div>
+											{% for post in posts  %}
+												{% if post.message is defined and loop.index < 3 %}
+												
+										        {{ post.created_time|date("d/m/Y") }}
+										        <br />
+										        {{ post.message|truncate(200) }}
+										        {% endif %}
+										        
+										    {% endfor %}
+										</div>
+										<div>
+										<h3>Tweet</h3>
+											{% for tweet in tweets  %}
+												
+										        {{ tweet.created_at|date("d/m/Y") }}
+										        <br />
+										        {{ tweet.text }}
+										        <!--
+										        tweet.profile_image_url 
+										        tweet.entities.urls.url
+										        -->
+										        <br />
+										        
+										        
+										    {% endfor %}
+										</div>
+									</header>
+									<hr />
+									<div>
+										<div class="row">
+										
 											<div class="6u">
 
 												<!-- Contact Form -->
