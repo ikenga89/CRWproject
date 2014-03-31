@@ -1223,3 +1223,15 @@
 				{
 					color: #fff;
 				}
+
+
+				#fancybox-content {
+					background: #fff!important;
+					height: 550px!important;
+				}
+				#fancybox-content textarea {
+					width: 400px;
+				}
+				#fancybox-content input {
+					width: 350px;
+				}

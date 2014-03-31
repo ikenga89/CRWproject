@@ -369,7 +369,12 @@
 			</div>
 			<div style="display:none">
 				<div id="popup">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					<form action="#" method="post">
+						{{ form_widget(form) }}
+
+						<input type="submit" name="submit" />
+					</form>
+
 				</div>
 			</div>
 			<script type="text/javascript">
@@ -380,7 +385,10 @@
 						'transitionOut'	:	'elastic',
 						'speedIn'		:	200, 
 						'speedOut'		:	200, 
-						'overlayShow'	:	false
+						'overlayShow'	:	false,
+						'autoDimensions': false,
+						'width'			: 420,
+						'height'		: 800
 					});			
 				});
 			</script>
