@@ -18,7 +18,6 @@ $app->register(new FacebookServiceProvider(), array(
 
 
 
-$app->register(new FormServiceProvider());
 
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../views',
@@ -31,16 +30,18 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     return $twig;
 }));
 
-$app->register(new Silex\Provider\TranslationServiceProvider(), array(
-    'locale_fallbacks' => array('fr'),
-));
-
 // Url generator
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
 $app->register(new Silex\Provider\SessionServiceProvider());
 
+$app->register(new FormServiceProvider());
+
 $app->register(new Silex\Provider\ValidatorServiceProvider());
+
+$app->register(new Silex\Provider\TranslationServiceProvider(), array(
+    'locale_fallbacks' => array('en'),
+));
 
 // Configs
 $app['debug'] = true;
