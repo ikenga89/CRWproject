@@ -34,9 +34,26 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
 $app->register(new Silex\Provider\SessionServiceProvider());
 
+
+
+// Envoie de mail : le protocole smtp bloqué test impossible a faire
+/*$app->register(new Silex\Provider\SwiftmailerServiceProvider(), array(
+	'swiftmailer.options' => array(
+		'host' => 'smtp.gmail.com',
+		'port' => '465',
+		'username' => 'unetwork89@gmail.com',
+	    'password' => 'googlenetwork',
+	    'encryption' => 'ssl',
+	    'auth_mode' => 'login',
+    )
+
+));
+*/
+
 $app->register(new FormServiceProvider());
 
 $app->register(new Silex\Provider\ValidatorServiceProvider());
+
 
 $app->register(new Silex\Provider\TranslationServiceProvider(), array(
     'locale_fallbacks' => array('en'),
