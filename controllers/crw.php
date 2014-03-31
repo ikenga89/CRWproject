@@ -55,8 +55,8 @@
 			new Assert\Length(array('min' => 2))
 			)
 		))
-		->add('compose', 'text', array(
-			'label' => 'Composé : ',
+		->add('compose', 'textarea', array(
+			'label' => 'Message : ',
 			'constraints' => array(
 			new Assert\NotBlank(), 
 			new Assert\Length(array('min' => 2))
@@ -65,7 +65,9 @@
 		->getForm();    
 
 		return $app['twig']->render('home.twig', array(
-			'posts' => $facebook_posts, 'tweets' => $tweets	
+			'posts' => $facebook_posts, 
+			'tweets' => $tweets,
+			'form' => $form->createView(), 	
 		));
 
 
