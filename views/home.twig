@@ -227,6 +227,8 @@
 				<div class="title">Contact</div>
 				<div class="container">
 					<div class="row">
+
+						<!-- FACEBOOK -->
 								<div class="6u">
 										<ul class="facebook_ul">
 											<h3 class="fa fa-facebook-square"> Dernier Post</h3>
@@ -235,7 +237,7 @@
 															<li>
 																<div class="row">
 														      		<div class="3u">
-														      		 	<img src="{{ facebook_picture.url }}">
+														      		 		<img src="{{ facebook_picture.url }}">
 														        	</div>
 
 														        	<div class="9u">
@@ -246,10 +248,34 @@
 												      		</li>
 												        {% endif %}
 												    {% endfor %}
-												</ul>
+										</ul>
 											
 								</div>
 
+						<!-- TWITTER -->
+								<div class="6u">
+										<ul class="facebook_ul">
+											<h3 class="fa fa-twitter-square"> Dernier Post</h3>
+																								
+														    {% for tweet in tweets  %}	
+														    	{% if loop.index < 4 %}
+															      	<li>
+															      		<div class="row">
+															      			<div class="3u">
+															      		 		Le    {{ tweet.created_at|date("d/m/Y") }}
+															        		</div>
+
+															        		<div class="9u">
+														       					{{ tweet.text }}
+														       				</div>	
+														       			</div>													     
+																	</li>
+																{% endif %}	
+															{% endfor %}
+												
+										</ul>
+											
+								</div>
 
 					</div>			
 
@@ -258,24 +284,7 @@
 							<!-- Footer -->
 								<div id="footer">
 
-									<div class="row">
 
-										<div>
-										<h3>Tweet</h3>
-											{% for tweet in tweets  %}
-												
-										        {{ tweet.created_at|date("d/m/Y") }}
-										        <br />
-										        {{ tweet.text }}
-										        <!--
-										        tweet.profile_image_url 
-										        tweet.entities.urls.url
-										        -->
-										        <br />
-										        
-										        
-										    {% endfor %}
-										</div>
 									<div>
 										<div class="row">
 										

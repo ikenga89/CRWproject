@@ -2,6 +2,9 @@
 
 	use Symfony\Component\HttpFoundation\Request;
 
+	use Symfony\Component\HttpFoundation\Response;	
+
+
 	use Silex\Provider\FormServiceProvider;
 
 	use Symfony\Component\Validator\Constraints as Assert;
@@ -36,12 +39,14 @@
 
         $tweets = json_decode($response->getBody());
 
+
      
         $all_tweet = array();
         foreach ($tweets as $tweet) {
         	$text_tweet = preg_replace('@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@', '<a href="$1">$1</a>', $tweet->text);
         	$all_tweet[] = array('text' => $text_tweet, 'created_at' => $tweet->created_at);
         }
+
             
         // Création formulaire
 		$form = $app['form.factory']->createBuilder('form')
@@ -73,17 +78,46 @@
 			new Assert\Length(array('min' => 2))
 			)
 		))
-		->getForm();    
+		->getForm();  
+		//FIN FORMULAIRE
+
+		/*
+		echo '<pre>';
+		var_dump($facebook_picture);
+		die();
+		*/
+		
+
 
 		return $app['twig']->render('home.twig', array(
 
-			'posts' => $facebook_posts,
-			'facebook_picture' => $facebook_picture, 
+
+			'posts' => $facebook_posts['data'],
+			'facebook_picture' => $facebook_picture['picture']['data'], 
 			'tweets' => $all_tweet,
 			'form' => $form->createView(), 	
+
 		));
 
-
 	})->bind('home');
+
+
+
+	// envoie de mail bloqué par le pare feu impossible de faire le test
+/*	$blog->get('/feedback', function () use ($app) {
+    $request = $app['request'];
+
+   $message = \Swift_Message::newInstance()
+        ->setSubject('Inscription U-NETWORK')
+        ->setFrom(array('unetwork89@gmail.com'))
+        ->setTo(array('yang_eric@hotmail.fr'))
+        ->setBody('toto');
+
+    $app['mailer']->send($message);
+
+    return new Response('Thank you for your feedback!', 201);
+});
+*/	
+
 
 	return $blog;
