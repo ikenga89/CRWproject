@@ -7,7 +7,7 @@
 
 	
 	$blog->get('/', function() use ($app){
-		return "hello";
+		return $app['twig']->render('home.twig');
 	})->bind('home');
 	
 
