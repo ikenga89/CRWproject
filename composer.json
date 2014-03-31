@@ -20,6 +20,7 @@
         "doctrine/dbal": ">=2.2.0,<2.4.0-dev",
         "swiftmailer/swiftmailer": "5.*",
         "twig/extensions": "dev-master",
-        "grom/facebook-service-provider":  "dev-master"
+        "grom/facebook-service-provider":  "dev-master",
+        "guzzle/guzzle": "~3.1.1"
     }
 }
