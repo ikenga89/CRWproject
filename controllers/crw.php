@@ -68,14 +68,24 @@
 			new Assert\Length(array('min' => 2))
 			)
 		))
-		->getForm();    
+		->getForm();  
+		//FIN FORMULAIRE
+
+		/*
+		echo '<pre>';
+		var_dump($facebook_picture);
+		die();
+		*/
+		
+
 
 		return $app['twig']->render('home.twig', array(
 
-			'posts' => $facebook_posts,
-			'facebook_picture' => $facebook_picture, 
+			'posts' => $facebook_posts['data'],
+			'facebook_picture' => $facebook_picture['picture']['data'], 
 			'tweets' => $tweets,
 			'form' => $form->createView(), 	
+
 		));
 
 

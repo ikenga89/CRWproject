@@ -233,14 +233,15 @@
 										<ul class="facebook_ul">
 											<h3 class="fa fa-facebook-square"> Dernier Post</h3>
 													{% for post in posts  %}
-														{% if post.message is defined and loop.index < 3 %}
+														{% if post.message is defined and loop.index < 2 %}
 															<li>
 																<div class="row">
 														      		<div class="3u">
-														      		 	Le {{ post.created_time|date("d/m/Y") }}
+														      		 		<img src="{{ facebook_picture.url }}">
 														        	</div>
 
 														        	<div class="9u">
+														        		Le {{ post.created_time|date("d/m/Y") }}
 													       				{{ post.message|truncate(200) }}
 													       			</div>
 													       		</div>		
@@ -257,7 +258,7 @@
 											<h3 class="fa fa-twitter-square"> Dernier Post</h3>
 																								
 														    {% for tweet in tweets  %}	
-														    	{% if loop.index < 3 %}
+														    	{% if loop.index < 4 %}
 															      	<li>
 															      		<div class="row">
 															      			<div class="3u">
