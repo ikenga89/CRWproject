@@ -10,16 +10,29 @@
 
 		$posts = $app['facebook']->api('/110864882309437/posts');
 
+		/*
 		foreach ($posts['data'] as $key => $value) {
 			echo $value['message'].'<br /><br />';
 		}
-		die();
-		echo '<pre>';
-		var_dump($posts);
+		*/
 		
 
+		
+		/*
+		echo '<pre>';
+		var_dump($posts);
+		die();
+		*/
+		
+		/*
 		return $app['twig']->render('home.twig', array(
-			'posts'));
+			'posts' => $posts,	
+		));
+		*/
+
+		return $app['twig']->render('home.twig');
+
+
 	})->bind('home');
 	
 

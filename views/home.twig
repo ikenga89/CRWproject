@@ -230,10 +230,14 @@
 							<!-- Footer -->
 								<div id="footer">
 									<header class="style1">
-										<h2>Google Map</h2>
-										<p class="byline">
-								
-										</p>
+										<div>
+											{#
+											{% for posts in post %}
+										        {{ post.created }}
+										    {% endfor %}
+
+										    #}
+										</div>
 									</header>
 									<hr />
 									<div>
