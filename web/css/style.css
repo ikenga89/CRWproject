@@ -1105,14 +1105,14 @@
 		
 	}
 	
-		.facebook_ul
+		.facebook_ul , .twitter_ul
 	{
-		 box-shadow: inset 0px 0px 2px 0px #a0a1a7;
+		box-shadow: inset 0px 0px 2px 0px #a0a1a7;
 		border-radius:0.35em;
 		padding: 1em;
 
 	}
-			.facebook_ul li
+			.twitter_ul li
 	{
 		border-bottom: solid 1px;
 		border-bottom-color: rgba(255,255,255,0.05);
