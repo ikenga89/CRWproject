@@ -1,7 +1,7 @@
 <?php
 
 	use Symfony\Component\HttpFoundation\Request;
-
+	use Symfony\Component\HttpFoundation\Response;	
 
 	$blog = $app['controllers_factory'];
 
@@ -34,7 +34,24 @@
 
 
 	})->bind('home');
-	
+
+
+
+	// envoie de mail bloqué par le pare feu impossible de faire le test
+/*	$blog->get('/feedback', function () use ($app) {
+    $request = $app['request'];
+
+   $message = \Swift_Message::newInstance()
+        ->setSubject('Inscription U-NETWORK')
+        ->setFrom(array('unetwork89@gmail.com'))
+        ->setTo(array('yang_eric@hotmail.fr'))
+        ->setBody('toto');
+
+    $app['mailer']->send($message);
+
+    return new Response('Thank you for your feedback!', 201);
+});
+*/	
 
 
 	return $blog;
