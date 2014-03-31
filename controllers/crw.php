@@ -10,26 +10,25 @@
 
 		$posts = $app['facebook']->api('/110864882309437/posts');
 
-		/*
-		foreach ($posts['data'] as $key => $value) {
-			echo $value['message'].'<br /><br />';
-		}
-		*/
-		
-
-		
-		/*
-		echo '<pre>';
-		var_dump($posts);
-		die();
-		*/
-
-		return $app['twig']->render('home.twig', array(
-			'posts' => $posts['data'],	
-		));
-		
-
-		//return $app['twig']->render('home.twig');
+		$twitter_client = new \Guzzle\Http\Client('https://api.twitter.com/{version}', array(
+                'version' => '1.1'
+            ));
+            $twitter_client->addSubscriber(new \Guzzle\Plugin\Oauth\OauthPlugin(array(
+                'consumer_key'  => 'ARfJFo5NwBMBvQ7MCJRBkQ',
+                'consumer_secret' => 'ixMxmsuHV2LFLNE9QOXex3DcxGBkzX5ucLuKh4K3xWg',
+                'token'       => '2420427098-eK2Fdjo4dwkf3Rc0Huptgv4QeFCjNBBQKbLwBMa',
+                'token_secret'  => 'TXfS7cZW9THyI65vurPnSOp5rEmpnX9eoRi55ryS9cdju'
+            )));
+ 
+            $request = $twitter_client->get('statuses/user_timeline.json');
+            $request->getQuery()->set('count', 5);
+            $request->getQuery()->set('screen_name', 'SciencesULyon');
+            $response = $request->send();
+ 
+            $tweets = json_decode($response->getBody());
+            
+        // Création formulaire
+        //return $app['twig']->render('home.twig');
 		$form = $app['form.factory']->createBuilder('form')
 		->add('nom', 'text', array(
 			'label' => 'Nom : ',
@@ -59,10 +58,14 @@
 			new Assert\Length(array('min' => 2))
 			)
 		))
-		->getForm();
+		->getForm();    
+
+		return $app['twig']->render('home.twig', array(
+			'posts' => $posts, 'tweets' => $tweets	
+		));
+
+
 
 	})->bind('home');
-	
-
 
 	return $blog;
