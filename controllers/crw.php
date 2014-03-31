@@ -35,6 +35,13 @@
         $response = $request->send();
 
         $tweets = json_decode($response->getBody());
+
+        foreach ($tweets as $tweet) {
+        	
+        	echo $tweet->text;
+        	# preg_replace('@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@', '<a href="$1">$1</a>', $s);
+        	# code...
+        }
             
         // Création formulaire
 		$form = $app['form.factory']->createBuilder('form')
