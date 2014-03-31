@@ -85,6 +85,7 @@
 		if($form->isValid()){
 			$data = $form->getData();
 			// redirect somewhere
+
 	        return $app->redirect($app['url_generator']->generate('thanks'));
 		}
 		//FIN FORMULAIRE

@@ -1,0 +1,121 @@
+<div id="footer-wrapper" class="wrapper">
+				<div class="title">Contact</div>
+				<div class="container">
+					<div id="rs" class="row">
+						<!-- FACEBOOK -->
+								<div class="6u">
+										<ul class="facebook_ul">
+											<h3 class="fa fa-facebook-square"> Dernier Post</h3>
+													{% for post in posts  %}
+														{% if post.message is defined and loop.index < 2 %}
+															<li>
+																<div class="row">
+														      		<div class="3u">
+														      		 	Le {{ post.created_time|date("d/m/Y") }}
+														        	</div>
+
+														        	<div class="9u">
+														        		
+													       				{{ post.message|truncate(300) }}
+													       			</div>
+													       		</div>		
+												      		</li>
+												        {% endif %}
+												    {% endfor %}
+										</ul>
+								</div>
+						<!-- TWITTER -->
+								<div class="6u">
+										<ul class="twitter_ul">
+											<h3 class="fa fa-twitter-square"> Dernier Post</h3>
+																								
+														    {% for tweet in tweets  %}	
+														    	{% if loop.index < 3 %}
+															      	<li>
+															      		<div class="row">
+															      			<div class="3u">
+															      		 		Le    {{ tweet.created_at|date("d/m/Y") }}
+															        		</div>
+
+															        		<div class="9u">
+														       					{{ tweet.text|raw }}
+														       				</div>	
+														       			</div>													     
+																	</li>
+																{% endif %}	
+															{% endfor %}												
+										</ul>											
+								</div>
+					</div>			
+
+							
+
+							<!-- Footer -->
+								<div id="footer">
+
+
+									<div>
+										<div class="row">
+										
+											<div class="6u">
+
+												<!-- Contact Form -->
+												<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2784.172630410314!2d4.865629!3d45.747685!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0741b8940b6aded!2sSciences-U+LYON!5e0!3m2!1sfr!2sfr!4v1396266122843" width="600" height="300" frameborder="0" style="border:0"></iframe>	
+												<!-- /Contact Form -->
+
+											</div>
+										
+												<!-- Contacts -->
+												<div class="6u">
+													<section class="footer-two">
+														<div class="feature-list feature-list-small">
+															<div>
+																<div class="row">
+																	<div class="6u">
+																		<section>
+																			<h3 class="fa fa-home">Mailing Address</h3>
+																			<p>
+																				Untitled Corporation<br />
+																				1234 Somewhere Rd #987<br />
+																				Nashville, TN 00000-0000
+																			</p>
+																		</section>
+																	</div>
+																	<div class="6u">
+																		<section>
+																			<h3 class="fa fa-comment">Social</h3>
+																			<p>
+																				<a href="http://twitter.com/n33co">@n33co</a><br />
+																				<a href="http://dribbble.com/n33">dribbble.com/n33</a><br />
+																				<a href="#">facebook.com/untitled</a>
+																			</p>
+																		</section>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="6u">
+																		<section>
+																			<h3 class="fa fa-envelope">Email</h3>
+																			<p>
+																				<a href="#">info@untitled.tld</a>
+																			</p>
+																		</section>
+																	</div>
+																	<div class="6u">
+																		<section>
+																			<h3 class="fa fa-phone">Phone</h3>
+																			<p>
+																				(000) 555-0000
+																			</p>
+																		</section>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</section>
+												</div>	
+												<!-- /Contacts -->
+										</div>
+									</div>
+								</div>
+							<!-- /Footer -->
