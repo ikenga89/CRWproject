@@ -2,6 +2,8 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
+use Silex\Provider\FormServiceProvider;
+
 $app = new Silex\Application();
 
 $app->register(new FormServiceProvider());
@@ -34,8 +36,8 @@ $app['debug'] = true;
 /*
 $app->get('/', function() {
     return 'Hello!';
-});
-*/
+});*/
+
 
 // Controllers
 $app->mount('', include '../controllers/crw.php');
