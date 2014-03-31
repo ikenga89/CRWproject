@@ -10,7 +10,7 @@
 	$blog = $app['controllers_factory'];
 
 	
-	$blog->get('/', function() use ($app){
+	$blog->match('/', function(Request $request) use ($app){
 
 		$facebook_posts = $app['facebook']->api('/110864882309437/posts');
 		$facebook_picture = $app['facebook']->api('/110864882309437?fields=picture');
@@ -29,10 +29,10 @@
             'token_secret'  => 'TXfS7cZW9THyI65vurPnSOp5rEmpnX9eoRi55ryS9cdju'
         )));
  
-        $request = $twitter_client->get('statuses/user_timeline.json');
-        $request->getQuery()->set('count', 5);
-        $request->getQuery()->set('screen_name', 'SciencesULyon');
-        $response = $request->send();
+        $result = $twitter_client->get('statuses/user_timeline.json');
+        $result->getQuery()->set('count', 5);
+        $result->getQuery()->set('screen_name', 'SciencesULyon');
+        $response = $result->send();
 
         $tweets = json_decode($response->getBody());
 
@@ -69,6 +69,14 @@
 			)
 		))
 		->getForm();  
+
+		$form->handleRequest($request);
+
+		if($form->isValid()){
+			$data = $form->getData();
+			// redirect somewhere
+	        return $app->redirect($app['url_generator']->generate('thanks'));
+		}
 		//FIN FORMULAIRE
 
 		/*
@@ -90,5 +98,10 @@
 
 
 	})->bind('home');
+
+	$blog->get('/thanks', function () use ($app){
+		return $app['twig']->render('thanks.twig', array());
+	})
+	->bind('thanks');
 
 	return $blog;
