@@ -399,7 +399,7 @@
 
 	.dropotron
 	{
-		background: #222835 url('images/overlay.png');
+		background: #222835 url('/css/images/overlay.png');
 		background-color: rgba(44,50,63,0.925);
 		padding: 1.25em 1em 1.25em 1em;
 		border-radius: 0.35em;

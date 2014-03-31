@@ -220,7 +220,7 @@
 				position: absolute;
 				left: 15px;
 				top: 6px;
-				background: url('images/mobileUI-site-nav-opener-bg.svg') 8px 14px no-repeat;
+				background: url('/images/mobileUI-site-nav-opener-bg.svg') 8px 14px no-repeat;
 				opacity: 0.5;
 			}
 
@@ -231,7 +231,7 @@
 
 	#navPanel
 	{
-		background: #242730 url('images/overlay.png');
+		background: #242730 url('/css/images/overlay.png');
 		box-shadow: inset -3px 0px 4px 0px rgba(0,0,0,0.1);
 	}
 
