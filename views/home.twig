@@ -229,7 +229,7 @@
 					<div class="row">
 								<div class="6u">
 										<ul class="facebook_ul">
-											<h3 	class="fa fa-facebook-square"> Dernier Post</h3>
+											<h3 class="fa fa-facebook-square"> Dernier Post</h3>
 													{% for post in posts  %}
 														{% if post.message is defined and loop.index < 2 %}
 															<li>
@@ -260,18 +260,6 @@
 
 									<div class="row">
 
-									<header class="style1">
-										<div>
-											{% for post in posts  %}
-												{% if post.message is defined and loop.index < 3 %}
-												
-										        {{ post.created_time|date("d/m/Y") }}
-										        <br />
-										        {{ post.message|truncate(200) }}
-										        {% endif %}
-										        
-										    {% endfor %}
-										</div>
 										<div>
 										<h3>Tweet</h3>
 											{% for tweet in tweets  %}
@@ -288,8 +276,6 @@
 										        
 										    {% endfor %}
 										</div>
-									</header>
-									<hr />
 									<div>
 										<div class="row">
 										
