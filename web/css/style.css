@@ -1096,7 +1096,10 @@
 /*********************************************************************************/
 /* Facebook API                                                                  */
 /*********************************************************************************/
-
+	#rs{
+		margin-top: 40px;
+	}
+	
 	.facebook_api
 	{
 		background: #f3f3f3 url('/css/images/overlay.png');
@@ -1107,6 +1110,7 @@
 	
 		.facebook_ul , .twitter_ul
 	{
+		height: 275px;
 		box-shadow: inset 0px 0px 2px 0px #a0a1a7;
 		border-radius:0.35em;
 		padding: 1em;

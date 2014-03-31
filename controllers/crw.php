@@ -43,7 +43,7 @@
      
         $all_tweet = array();
         foreach ($tweets as $tweet) {
-        	$text_tweet = preg_replace('@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@', '<a href="$1">$1</a>', $tweet->text);
+        	$text_tweet = preg_replace('@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@', '<a href="$1" TARGET=_BLANK >$1</a>', $tweet->text);
         	$all_tweet[] = array('text' => $text_tweet, 'created_at' => $tweet->created_at);
         }
 
