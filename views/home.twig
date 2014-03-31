@@ -233,11 +233,14 @@
 								<div id="footer">
 									<header class="style1">
 										<div>
-											{% for post in posts if post.message is defined %}
+											{% for post in posts  %}
+												{% if post.message is defined and loop.index < 3 %}
+												
 										        {{ post.created_time|date("d/m/Y") }}
 										        <br />
 										        {{ post.message|truncate(200) }}
-										        <br /><br />
+										        {% endif %}
+										        
 										    {% endfor %}
 										</div>
 									</header>
