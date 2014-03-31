@@ -22,9 +22,15 @@
 			<link rel="stylesheet" href="/css/style.css" />
 			<link rel="stylesheet" href="/css/style-desktop.css" />
 		</noscript>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+		<script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+		<link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 	</head>
-	<body class="homepage">
 
+
+
+
+	<body class="homepage">
 		<!-- Header Wrapper -->
 			<div id="header-wrapper" class="wrapper">
 				<div class="container">
@@ -36,8 +42,7 @@
 									
 									<!-- Logo -->
 										<div id="logo">
-											<h1><a href="#">Unetwork</a></h1>
-											<span class="byline">restez en contact avec votre communauté</span>
+											
 										</div>
 									<!-- /Logo -->
 									
@@ -154,7 +159,7 @@
 											</div>
 											<ul class="actions actions-centered">
 												<li><a href="#" class="button button-style1 button-big">Se Connecter</a></li>
-												<li><a href="#" class="button button-style2 button-big">Demande d'inscription</a></li>
+												<li><a href="#popup" rel="group" class="button button-style2 button-big inline">Demande d'inscription</a></li>
 											</ul>
 										</section>
 									<!-- /Features -->
@@ -230,10 +235,14 @@
 							<!-- Footer -->
 								<div id="footer">
 									<header class="style1">
-										<h2>Google Map</h2>
-										<p class="byline">
-								
-										</p>
+										<div>
+											{#
+											{% for posts in post %}
+										        {{ post.created }}
+										    {% endfor %}
+
+										    #}
+										</div>
 									</header>
 									<hr />
 									<div>
@@ -310,12 +319,27 @@
 									</span>
 								</div>
 							<!-- /Copyright -->
-						
 						</div>
 					</div>
 				</div>
 			</div>
+			<div style="display:none">
+				<div id="popup">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				</div>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					/* Apply fancybox to multiple items */				
+					$("a.inline").fancybox({
+						'transitionIn'	:	'elastic',
+						'transitionOut'	:	'elastic',
+						'speedIn'		:	200, 
+						'speedOut'		:	200, 
+						'overlayShow'	:	false
+					});			
+				});
+			</script>
 		<!-- /Footer Wrapper -->
-
 	</body>
 </html>
