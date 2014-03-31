@@ -2,6 +2,10 @@
 
 	use Symfony\Component\HttpFoundation\Request;
 
+	use Silex\Provider\FormServiceProvider;
+
+	use Symfony\Component\Validator\Constraints as Assert;
+
 
 	$blog = $app['controllers_factory'];
 
@@ -13,7 +17,7 @@
 		$twitter_client = new \Guzzle\Http\Client('https://api.twitter.com/{version}', array(
                 'version' => '1.1'
         ));
-        
+
         $twitter_client->addSubscriber(new \Guzzle\Plugin\Oauth\OauthPlugin(array(
             'consumer_key'  => 'ARfJFo5NwBMBvQ7MCJRBkQ',
             'consumer_secret' => 'ixMxmsuHV2LFLNE9QOXex3DcxGBkzX5ucLuKh4K3xWg',
