@@ -331,13 +331,13 @@
 
 		.button-style1
 		{
-			background: #e97770 url('/css/images/overlay.png');
+			background: #70a0e9 url('/css/images/overlay.png');
 			color: #fff;
 		}
 
 			.button-style1:hover
 			{
-				background-color: #f98780;
+				background-color: #4978bd;
 			}
 			
 			.button-style1:active
@@ -354,7 +354,7 @@
 		
 			.button-style2:hover
 			{
-				box-shadow: inset 0px 0px 2px 0px #606167;
+				box-shadow: inset 0px 0px 2px 0px #4978bd;
 			}
 		
 			.button-style2:active
@@ -432,7 +432,7 @@
 
 		.feature-list h3
 		{
-			color: #e97770 !important;
+			color: #70a0e9b !important;
 		}
 		
 			.feature-list h3:before
@@ -1041,14 +1041,14 @@
 	
 	.wrapper-style1
 	{
-		background: #e97770 url('/css/images/overlay.png');
+		background: #70a0e9 url('/css/images/overlay.png');
 		color: #eee;
 		color: rgba(255,255,255,0.75);
 	}
 	
 		.wrapper-style1 .title
 		{
-			background: #e97770 url('/css/images/overlay.png');
+			background: #70a0e9 url('/css/images/overlay.png');
 			color: #fff;
 		}
 	
@@ -1159,7 +1159,7 @@
 		
 			#highlights .highlight h3
 			{
-				color: #e97770;
+				color: #70a0e9;
 			}
 
 /*********************************************************************************/
