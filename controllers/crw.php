@@ -24,13 +24,14 @@
 		die();
 		*/
 		
-		/*
+		
+		
 		return $app['twig']->render('home.twig', array(
-			'posts' => $posts,	
+			'posts' => $posts['data'],	
 		));
-		*/
+		
 
-		return $app['twig']->render('home.twig');
+		//return $app['twig']->render('home.twig');
 
 
 	})->bind('home');
