@@ -27,8 +27,12 @@
  
             $tweets = json_decode($response->getBody());
 
+/*
+            echo "<pre>";
 
-
+            var_dump($tweets);
+            die();
+*/
 		return $app['twig']->render('home.twig', array(
 			'posts' => $posts, 'tweets' => $tweets	
 		));

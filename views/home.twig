@@ -243,6 +243,17 @@
 										        
 										    {% endfor %}
 										</div>
+										<div>
+											{% for tweet in tweets  %}
+												
+										        {{ tweet.created_at|date("d/m/Y") }}
+										        <br />
+										        {{ tweet.text }}
+										        <br />
+										        
+										        
+										    {% endfor %}
+										</div>
 									</header>
 									<hr />
 									<div>
