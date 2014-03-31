@@ -11,7 +11,7 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
-
+/*
 	*
 	{
 		-moz-box-sizing: border-box;
@@ -20,6 +20,7 @@
 		-ms-box-sizing: border-box;
 		box-sizing: border-box;
 	}
+	*/
 
 	body, input, textarea, select
 	{
@@ -138,6 +139,7 @@
 
 	form
 	{
+		padding: 10px;
 	}
 	
 		form label
@@ -163,6 +165,11 @@
 			-o-transition: all .25s ease-in-out;
 			-ms-transition: all .25s ease-in-out;
 			transition: all .25s ease-in-out;
+		}
+
+		form button[type=submit]{
+			margin-top: 20px;
+			width: 100%;
 		}
 
 			form input.text:hover,
@@ -1199,39 +1206,34 @@
 /*********************************************************************************/
 /* Copyright                                                                     */
 /*********************************************************************************/
-			
+
 	#copyright
 	{
 		text-align: center;
 	}
 	
-		#copyright span
-		{
-			display: inline-block;
-			border-radius: 0.35em;
-			box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.05);
-			color: #aaa;
-			color: rgba(255,255,255,0.25);
-		}
-		
-			#copyright span a
-			{
-				color: inherit;
-			}
-			
-				#copyright span a:hover
-				{
-					color: #fff;
-				}
+	#copyright span
+	{
+		display: inline-block;
+		border-radius: 0.35em;
+		box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.05);
+		color: #aaa;
+		color: rgba(255,255,255,0.25);
+	}
+	
+	#copyright span a
+	{
+		color: inherit;
+	}
+	
+	#copyright span a:hover
+	{
+		color: #fff;
+	}
 
-
-				#fancybox-content {
-					background: #fff!important;
-					height: 550px!important;
-				}
-				#fancybox-content textarea {
-					width: 400px;
-				}
-				#fancybox-content input {
-					width: 350px;
-				}
+/*********************************************************************************/
+/* FancyBox (popin)                                                               */
+/*********************************************************************************/	
+#fancybox-content, #fancybox-outer{
+	border-radius: 5px;
+}

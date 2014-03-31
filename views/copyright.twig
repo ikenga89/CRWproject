@@ -14,24 +14,25 @@
 					<form action="#" method="post">
 						{{ form_widget(form) }}
 
-						<input type="submit" name="submit" />
+						<!--<input class="button button-style1" type="submit" name="submit" />-->
 					</form>
 
 				</div>
 			</div>
 			<script type="text/javascript">
 				$(document).ready(function() {
-					/* Apply fancybox to multiple items */				
+					/* Apply fancybox to multiple items */
 					$("a.inline").fancybox({
-						'transitionIn'	:	'elastic',
-						'transitionOut'	:	'elastic',
-						'speedIn'		:	200, 
-						'speedOut'		:	200, 
-						'overlayShow'	:	false,
+						'transitionIn'	:	'fade',
+						'transitionOut'	:	'fade',
+						'speedIn'		:	300,
+						'speedOut'		:	300,
+						'overlayShow'	:	true,
 						'autoDimensions': false,
-						'width'			: 420,
-						'height'		: 800
-					});			
+						'width'			: 500,
+						'height'		: 615,
+						'scrolling'		: 'no',
+					});
 				});
 			</script>
 		<!-- /Footer Wrapper -->
