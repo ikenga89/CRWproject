@@ -13,6 +13,7 @@
 	$blog->get('/', function() use ($app){
 
 		$facebook_posts = $app['facebook']->api('/110864882309437/posts');
+		$facebook_picture = $app['facebook']->api('/110864882309437?fields=picture');
 
 		$twitter_client = new \Guzzle\Http\Client('https://api.twitter.com/{version}', array(
                 'version' => '1.1'
@@ -82,7 +83,9 @@
 
 
 		return $app['twig']->render('home.twig', array(
-			'posts' => $facebook_posts, 'tweets' => $tweets	
+			'posts' => $facebook_posts,
+			'facebook_picture' => $facebook_picture,
+			'tweets' => $tweets,
 		));
 
 
