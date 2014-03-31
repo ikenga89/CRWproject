@@ -227,26 +227,37 @@
 				<div class="title">Contact</div>
 				<div class="container">
 					<div class="row">
-						<div class="12u">
+								<div class="6u">
+										<ul class="facebook_ul">
+											<h3 	class="fa fa-facebook-square"> Dernier Post</h3>
+													{% for post in posts  %}
+														{% if post.message is defined and loop.index < 2 %}
+															<li>
+																<div class="row">
+														      		<div class="3u">
+														      		 	<img src="{{ facebook_picture.url }}">
+														        	</div>
+
+														        	<div class="9u">
+														        		Le {{ post.created_time|date("d/m/Y") }}
+													       				{{ post.message|truncate(200) }}
+													       			</div>
+													       		</div>		
+												      		</li>
+												        {% endif %}
+												    {% endfor %}
+												</ul>
+											
+								</div>
+
+
+					</div>			
+
+							
 
 							<!-- Footer -->
 								<div id="footer">
-									<header class="style1">
-										<div>
-											{% for post in posts  %}
-												{% if post.message is defined and loop.index < 3 %}
-												
-										        {{ post.created_time|date("d/m/Y") }}
-										        <br />
-										        {{ post.message|truncate(200) }}
-										        {% endif %}
-										        
-										    {% endfor %}
-										</div>
-									</header>
-									<hr />
-									<div>
-										<div class="row">
+									<div class="row">
 											<div class="6u">
 
 												<!-- Contact Form -->
@@ -254,9 +265,9 @@
 												<!-- /Contact Form -->
 
 											</div>
-											<div class="6u">
-											
+										
 												<!-- Contacts -->
+												<div class="6u">
 													<section class="footer-two">
 														<div class="feature-list feature-list-small">
 															<div>
@@ -303,12 +314,10 @@
 															</div>
 														</div>
 													</section>
+												</div>	
 												<!-- /Contacts -->
-													
-											</div>
 										</div>
 									</div>
-									<hr />
 								</div>
 							<!-- /Footer -->
 
