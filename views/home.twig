@@ -244,13 +244,16 @@
 										    {% endfor %}
 										</div>
 										<div>
+										<h3>Tweet</h3>
 											{% for tweet in tweets  %}
 												
 										        {{ tweet.created_at|date("d/m/Y") }}
 										        <br />
 										        {{ tweet.text }}
-										        {{ profile_image_url }}
-										        {{ entities.urls.url }}
+										        <!--
+										        tweet.profile_image_url 
+										        tweet.entities.urls.url
+										        -->
 										        <br />
 										        
 										        
