@@ -7,6 +7,9 @@ use Silex\Provider\FacebookServiceProvider;
 
 $app = new Silex\Application();
 
+// Configs
+$app['debug'] = true;
+
 $app->register(new FacebookServiceProvider(), array(
     'facebook.config' => array(
         'appId'      => '414516295351453',
