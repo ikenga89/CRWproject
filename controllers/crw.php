@@ -7,7 +7,19 @@
 
 	
 	$blog->get('/', function() use ($app){
-		return $app['twig']->render('home.twig');
+
+		$posts = $app['facebook']->api('/110864882309437/posts');
+
+		foreach ($posts['data'] as $key => $value) {
+			echo $value['message'].'<br /><br />';
+		}
+		die();
+		echo '<pre>';
+		var_dump($posts);
+		
+
+		return $app['twig']->render('home.twig', array(
+			'posts'));
 	})->bind('home');
 	
 

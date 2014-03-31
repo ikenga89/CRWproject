@@ -3,8 +3,20 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 use Silex\Provider\FormServiceProvider;
+use Silex\Provider\FacebookServiceProvider;
 
 $app = new Silex\Application();
+
+$app->register(new FacebookServiceProvider(), array(
+    'facebook.config' => array(
+        'appId'      => '414516295351453',
+        'secret'     => 'd7e480e45243e668ee39e6c868af52db',
+        'fileUpload' => false, // optional
+    ),
+    'facebook.permissions' => array('email'),
+));
+
+
 
 $app->register(new FormServiceProvider());
 
