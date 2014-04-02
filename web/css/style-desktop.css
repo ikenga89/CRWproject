@@ -36,12 +36,12 @@
 		padding: 3em 0 3em 0;
 	}
 
-		header.style1 h2
-		{
-			font-size: 2em;
-			letter-spacing: 0.075em;
-			line-height: 1.5em;
-		}
+	header.style1 h2
+	{
+		font-size: 2em;
+		letter-spacing: 0.075em;
+		line-height: 1.5em;
+	}
 		
 		header.style1 .byline
 		{
@@ -394,7 +394,8 @@
 			#nav > ul > li.active > a,
 			#nav > ul > li.active > span
 			{
-				color: #fff;
+				color: #70A0E9;
+				/*color: #fff;*/
 			}
 
 	.dropotron
